@@ -1,0 +1,33 @@
+# 71200595 Gerry Sunjay Junjung
+def kasir():
+    print (10*'=','Kasir Toko Sebelah','='*10)
+    banyak = int(input("Jumlah Barang : "))
+
+    data = dict()
+
+    for i in range(banyak):
+        print('====================')
+        print('|',end='')
+        nama = input("Nama : ")
+        print('|',end='')
+        harga = int(input("Harga : Rp."))
+
+        data[nama] = harga
+
+    jumlah = sum(data.values())
+    
+
+    print("====================")
+    print(f"Harga Total : Rp.{jumlah}")
+    print("====================")
+    bayar = int(input('Bayaran : Rp.'))
+    if bayar == jumlah:
+        print('Kembalian = Rp.0')
+    elif bayar > jumlah:
+        print ('Kembalian = Rp.',bayar-jumlah)
+    elif bayar < jumlah:
+        print ('Pembayaran Kurang = Rp.', jumlah-bayar)
+    else:
+        print ('Inputan Jumlah Uang Salah')
+    print ('Terimakasih')
+kasir()
